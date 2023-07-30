@@ -5,13 +5,12 @@ import NFTContractAddress from "./NFTContractAddress";
 
 const MinterPage = () => {
   const [name, setName] = useState("");
-  const [itemPreview, setItemPreview] = useState(null); // Update the state for the selected file
+  const [itemPreview, setItemPreview] = useState(null); 
   const [metaData, setMetaData] = useState([{ key: "", value: "" }]);
   const [price, setPrice] = useState("");
   const [file, setFile] = useState(null);
 
   const handleFileChange = (e) => {
-    // Update the state for the selected file
     setFile(e.target.files[0]);
     setItemPreview(URL.createObjectURL(e.target.files[0]));
   };
@@ -55,7 +54,7 @@ const MinterPage = () => {
 
   // Function to upload the NFT file to off-chain storage using a public IPFS gateway
   const uploadFileToIPFS = async (file) => {
-    const apiUrl = "https://ipfs.infura.io:5001/api/v0/add"; // Public IPFS gateway API URL
+    const apiUrl = "https://ipfs.infura.io:5001/api/v0/add"; 
     try {
       const formData = new FormData();
       formData.append("file", file);
